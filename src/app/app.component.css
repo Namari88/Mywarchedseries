@@ -1,0 +1,40 @@
+/* * {
+    outline: 1px solid red;
+  }      */
+  
+  
+  body {
+    margin: 0;
+  }
+
+
+.head{
+    height: 4rem;
+    background-color: black;
+    color: bisque;
+}
+
+
+.menubar {
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    justify-content: flex-end;
+    height: 4rem;
+    font-family: ct_font_rakuten_sans_regular, Sans-Serif;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+ a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+ }
+
+
+.homebutton{
+    filter: invert(100%);
+    height: 18px;
+}

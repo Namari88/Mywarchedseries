@@ -1,0 +1,34 @@
+<body style="margin: 0;">
+
+    <div class="card">
+      <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" 
+      [autoplayInterval]="5000" autoplay="true" 
+      [responsiveOptions]="responsiveOptions">
+        <ng-template let-image pTemplate="item">
+          <img class="img" [src]="image" />
+        </ng-template>
+      </p-carousel>
+    </div>
+  
+  
+  
+  
+  
+  
+    <!-- <div class="card">
+      <p-galleria 
+      [value]="images"
+          [showItemNavigators]="true" 
+          [autoPlay]="true" 
+      [circular]="true" 
+          [circular]="true" 
+          [numVisible]="5" 
+          [containerStyle]="{ 'max-width': '640px' }">
+              <ng-template  let-image pTemplate="item" let-item>
+                  <img [src]="image" style="width: 100%; display: block;" />
+              </ng-template>
+  
+      </p-galleria>
+  </div> -->
+  </body>
+  

@@ -1,0 +1,79 @@
+/* * {
+    outline: 1px solid red;
+  }      */
+  
+  
+  body {
+    margin: 0;
+  }
+
+
+.head{
+    height: 4rem;
+    background-color: black;
+    color: bisque;
+}
+
+
+.menubar {
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    justify-content: flex-end;
+    height: 4rem;
+    font-family: ct_font_rakuten_sans_regular, Sans-Serif;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+ a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+ }
+
+
+
+
+.img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+::ng-deep#pn_id_1 > div > div {
+    height: 80vh;
+}
+
+::ng-deep.p-carousel-prev, ::ng-deep.p-carousel-next {
+
+display: none;
+}
+
+
+::ng-deep#pn_id_1 > div > ul {
+    margin-top: -2em;
+    z-index: 1000;
+    padding: 0;
+
+}
+
+::ng-deep#pn_id_1 > div > ul > li.p-carousel-indicator {
+    list-style-type: none;
+}
+
+::ng-deep#pn_id_1 > div > ul > li.p-carousel-indicator > button {
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 50px;
+    border: none;
+    margin-right: 0.3rem;
+}
+
+
+::ng-deep.p-carousel-content {
+    overflow: hidden;
+}

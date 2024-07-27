@@ -1,0 +1,99 @@
+<body>
+    <div class="container">
+        <div class="sorik">
+            <div class="head">Megnézett sorozataim</div>
+            <div class="cont2">
+                <div class="donesorik" *ngFor="let sorozat of paginatedSorozatok; let i = index">
+                  <li>
+                    <img class="image" *ngIf="sorozat.imageUrl" [src]="sorozat.imageUrl" alt="{{ sorozat.name }}" width="100" /> <br>
+                    {{ sorozat.name }} <br>
+                    <img *ngIf="sorozat.nationality && flags[sorozat.nationality.value]" [src]="flags[sorozat.nationality.value]" alt="{{ sorozat.nationality.value }}" width="20" />
+                    <p *ngIf="!flags[sorozat.nationality.value]">No flag for {{ sorozat.nationality.value }}</p> <br>
+                    <span>{{ sorozat.dateAdded }}</span> <br>
+                    <button (click)="editSeries(i)">Szerkesztés</button>
+                    <button (click)="deleteSeries(i)">Törlés</button>
+                  </li>
+                </div>
+                <p-paginator [rows]="rows" [totalRecords]="sorozatok.length" (onPageChange)="paginate($event)"></p-paginator>
+              </div>
+           
+
+              
+
+
+        </div>
+
+        <div class="ujsori" *ngIf="!isEditing">
+            <div class="head">Új sorozat hozzáadása</div>
+            <div class="input flex flex-column gap-2">
+                <p-floatLabel>
+                    <input pInputText id="newSeries" [(ngModel)]="newSeries" />
+                    <label for="newSeries">Új befejezett sorozat</label>
+                </p-floatLabel>
+            </div>
+
+            <div class="input flex flex-column gap-2">
+                <p-floatLabel>
+                    <p-dropdown 
+                    [options]="nationalities" 
+                    [(ngModel)]="nationality" 
+                    optionLabel="label"
+                    placeholder="Select Nationality">
+                  </p-dropdown>
+                    <label for="nationality">Nemzetiség</label>
+                </p-floatLabel>
+            </div>
+
+            <div class="input flex flex-column gap-2">
+                <input type="file" name="uploadfile" id="img" style="display:none;" (change)="onFileSelected($event)" />
+                <label class="upload" for="img">Képfeltöltés</label>
+            </div>
+
+            <div class="card flex justify-content-center">
+                <p-toast></p-toast>
+            </div>
+
+            <div class="input card flex justify-content-center" (click)="addSeries()">
+                <p-button label="Hozzáadás"></p-button>
+            </div>
+        </div>
+
+        <div class="ujsori" *ngIf="isEditing">
+            <div class="head">Sorozat szerkesztése</div>
+            <div class="input flex flex-column gap-2">
+                <p-floatLabel>
+                    <input pInputText id="editSeries" [(ngModel)]="editedSeries.name" />
+                    <label for="editSeries">Sorozat neve</label>
+                </p-floatLabel>
+            </div>
+
+            <div class="input flex flex-column gap-2">
+                <p-floatLabel>
+                    <p-dropdown 
+                        [options]="nationalities" 
+                        [(ngModel)]="editedSeries.nationality" 
+                        optionLabel="label"
+                        placeholder="Select Nationality">
+                    </p-dropdown>
+                    <label for="editSeriesNationality">Nemzetiség</label>
+                </p-floatLabel>
+            </div>
+
+            <div class="input flex flex-column gap-2">
+                <input type="file" name="editUploadfile" id="editImg" style="display:none;" (change)="onEditFileSelected($event)" />
+                <label class="upload" for="editImg">Képfeltöltés</label>
+            </div>
+
+            <div class="card flex justify-content-center">
+                <p-toast></p-toast>
+            </div>
+
+            <div class="input card flex justify-content-center" (click)="saveEditedSeries()">
+                <p-button label="Mentés"></p-button>
+            </div>
+            <div class="input card flex justify-content-center" (click)="cancelEdit()">
+                <p-button label="Mégse"></p-button>
+            </div>
+        </div>
+    </div>
+</body>

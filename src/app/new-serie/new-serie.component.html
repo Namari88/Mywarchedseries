@@ -1,0 +1,28 @@
+<body>
+    <div class="container">
+        <div class="flex flex-column gap-2">
+            <p-floatLabel>
+                <input pInputText id="username" [(ngModel)]="value" />
+                <label for="username">Új befejezett sorozat</label>
+            </p-floatLabel>
+        </div>
+
+
+        <div class="card flex justify-content-center">
+            <p-toast />
+            <p-fileUpload 
+                mode="basic" 
+                chooseLabel="Képfeltöltés" 
+                chooseIcon="pi pi-upload"
+                name="demo[]" 
+              
+                accept="image/*" 
+              
+                />
+        </div>
+
+
+
+     
+    </div>
+</body>

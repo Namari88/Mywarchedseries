@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    margin: auto;
+    width: 90vw;
+    justify-content: space-between;
+}
+
+
+.ujsori{
+    margin-right: 30rem;
+}
+
+    .head {
+        font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    }
+
+    .input {
+        margin-bottom: 1rem;
+    }
+
+.upload{
+    color: #ffffff;
+    background: #3B82F6;
+    border: 1px solid #3B82F6;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, outline-color 0.2s;
+    border-radius: 6px;
+
+    
+} 
+
+
+.donesorik {
+    height: 15rem;
+    height: 15rem;
+    width: 12rem;
+    margin-bottom: 2rem;
+
+}
+
+
+.image{
+    max-height: 9rem;
+}
+
+.cont2{
+    width: 50rem;
+    display: flex;
+    height: 15rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none; /* Alapértelmezett listaelemek stílusának eltávolítása */
+    padding: 10px; /* Kis térközt adunk az elemek belsejében */
+    border: 1px solid #ccc; /* Vékony keret az elemek körül */
+    border-radius: 5px; /* Kicsit lekerekítjük a sarkokat */
+}
